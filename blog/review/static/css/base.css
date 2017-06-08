@@ -10,6 +10,9 @@
     background-color: transparent;
     text-align: center;
 }
+.brandicon {
+  padding:8px;
+}
 
 .navbar-default .navbar-brand {
     color: white;
@@ -22,14 +25,17 @@
     padding-top: 40px;
     padding-bottom: 40px;
 }
+
 /*//header**************************************/
 
 #stars {
     float:right;
 }
 
-.main-content{
-  padding:50px;
+.content{
+  margin-top:20px;
+  width:740px;
+  max-width: 740px;
 }
 
 hr{
@@ -39,10 +45,23 @@ hr{
 
 /*footer*************/
 .site-footer{
-  margin-top:260px;
   border:0px;
   text-align: center;
   padding: 20px 20px;
   background-color: black;
   color:white;
+}
+.sidebar {
+  width:400px;
+  max-width:400px;
+  height:2000px;
+  border: solid 3px grey;
+  border-top:0px;
+  border-bottom: 0px;
+  border-right: 0px;
+  color:white;
+  background-color: rgba(5,5,5,0.3);
+}
+body{
+  background: -webkit-linear-gradient(top, #b3b3b0 0%, #e3e2dd 500px);
 }

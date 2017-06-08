@@ -39,8 +39,8 @@
               <span class="icon-bar"></span>
             </button>
 
-           <a class="navbar-brand" href="#"><img alt="Brand" src="/static/images/brandicon.png"></a>
-           <a class="navbar-brand" href="#">Stars</a>
+           <a class="navbar-brand brandicon" href=""><img title="Stars" alt="Brand" src="/static/images/brandicon.png"></a>
+           <a class="navbar-brand" href="">Stars</a>
           <!-- Brand and Toggle are grouped together -->
 
          </div> <!-- navbar header -->
@@ -71,11 +71,11 @@
 </header>
 <!--End of header +++++++++++++++++++++++++++-->
 
-
 <!-- BODY CONTENT *****====================-->
-<div class="main-content">
-  <div class="container">
-    <div class="row">
+
+<div class="container" style="margin:auto">
+  <div class="container pull-left content">
+    <div class="text-justify row">
     {% for obj in objects %}
 
       <div class="col-md-12">
@@ -95,8 +95,95 @@
       </div>
       {% endfor %}
     </div>
+</div>
+
+  <div class="container pull-right sidebar">
+  <div>
+    <a href="">Binary Search<br></a>
+    <a href="">Quick Sork<br></a>
+    <a href="">Suffix Array<br></a>
+    <a href="">Knuth-Morris-Pratt Algorith (KMP)<br></a>
+    <a href="">Rabin-Karp Algorith<br></a>
+    <a href="">Tries<br></a>
+    <a href="">Deapth First Traversal of a graph<br></a>
+    <a href="">Breadth First Traversal of a graph<br></a>
+    <a href="">Dijkstra's Algorith<br></a>
+    <a href="">Binary Indexed Tree<br></a>
+    <a href="">Segment Tree ( with lazy propogation )<br></a>
+    <a href="">Z Algorith<br></a>
+    <a href="">Floyd Warshall Algorithm<br></a>
+    <a href="">Heap /Priority Queue/ Heapsort<br></a>
+    <a href="">Modular Multiplicative Inverse<br></a>
+    <a href="">Binamial Coefficients<br></a>
+    <a href="">Suffix Automation<br></a>
+    <a href="">Lowest Common Ancestor<br></a>
+    <a href="">Counting Inversions<br></a>
+    <a href="">Euclid's Extended Algorithm<br></a>
+    <a href="">Suffix Tree<br></a>
+    <a href="">Dynamic Programming<br></a>
+    <a href="">Basic Data Structures<br></a>
+    <a href="">Logarithmic Exponentiation<br></a>
+    <a href="">Graphs<br></a>
+    <a href="">Minimum Spanning Tree<br></a>
+    <a href="">Efficient Prime Factorization<br></a>
+    <a href="">Combinatorics<br></a>
+    <a href="">Knapsack Problem<br></a>
+    <a href="">Aho-Corasick String Matching Algrithm<br></a>
+    <a href="">Strongly Connected Components<br></a>
+    <a href="">Bellman Ford Algorithm<br></a>
+    <a href="">Heacy-ligth Decomposition<br></a>
+    <a href="">Convex Hull<br></a>
+    <a href="">Line Intersection<br></a>
+    <a href="">Sieve of Erastothenes<br></a>
+    <a href="">Interval Tree<br></a>
+    <a href="">Counting Sort<br></a>
+    <a href="">Probabilities<br></a>
+    <a href="">Matrix Exponentiation<br></a>
+    <a href="">Network Flow<br></a>
+    <a href="">K-D Tree<br></a>
+    <a href="">Deque<br></a>
+    <a href="">Binary Search Tree<br></a>
+    <a href="">Quick Select<br></a>
+    <a href="">Treap/Cartesian Tree<br></a>
+    <a href="">Game Theory<br></a>
+    <a href="">STL<br></a>
+    <a href="">Maximum Bipartitle Matching<br></a>
+    <a href="">Manacher's Algorithm<br></a>
+    <a href="">Miller-Rabin Primality Test:Code<br></a>
+    <a href="">Stable Marrage Problem<br></a>
+    <a href="">Hungarian Algorithm, Tutorial<br></a>
+    <a href="">Sweep Line Algirithm<br></a>
+    <a href="">LCP<br></a>
+    <a href="">Gaussian Elimination<br></a>
+    <a href="">Pollard Pho Integer Factorization Problem<br></a>
+    <a href="">Topological Sorting<br></a>
+    <a href="">Detecting Cycles in a Graph:Directed<br></a>
+    <a href="">Geometry<br></a>
+    <a href="">Backtracing<br></a>
+    <a href="">Euleran and Hamiltonian Paths<br></a>
+    <a href="">Graph Coloring<br></a>
+    <a href="">Meet in the Middle<br></a>
+    <a href="">Arbitary Precision Integer<br></a>
+    <a href="">Radix Sort and Bucket Sort<br></a>
+    <a href="">Johnson's Algorithm<br></a>
+    <a href="">Maximal Matching in a General Graph<br></a>
+    <a href="">Recursion<br></a>
+    <a href="">Inclusive and Exclusive Principle<br></a>
+    <a href="">Co-ordinate Compression<br></a>
+    <a href="">Sqrt-Decomposition<br></a>
+    <a href="">Link-Cut Tree<br></a>
+    <a href="">Euler's Totient Function<br></a>
+    <a href="">Burnside Lemma<br></a>
+    <a href="">Edit/Levenshtein Distance<br></a>
+    <a href="">Banch and Bound<br></a>
+    <a href="">Math for Competitve Programming<br></a>
+    <a href="">Mo's Algorithm<br></a>
   </div>
 </div>
+</div>
+
+
+
 
 
 
@@ -114,6 +201,9 @@
     <script src="/static/js/bootstrap.min.js"></script>
     <!--functions created by me -->
     <script src="/static/js/base.js"></script>
+    <script>
+      document.onload(document.getElementById('stars').innerHTML = parseFloat(document.getElementById('stars').innerHTML).toFixed(2)) // restrict the stars value to 2 decimal places       
+    </script>
     
   </body>
 </html>
