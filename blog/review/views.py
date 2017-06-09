@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
 from .models import Object, Rate, User, Struct
 from .helper import set_cookie
 
@@ -65,15 +64,22 @@ def rate(request):
 
 
 def display(request):
-    
-    struct = request.GET.get('struct', None)
-    content = Object.objects.filter( struct=Struct.objects.get( name=struct ))[0]
 
-    json_content = {
-        "title" : content.title,
-        "text"  : content.body,
-    }
+    struct = request.GET.get('struct', None)
+    query = Object.objects.filter( struct=Struct.objects.get( name=struct ))
+    posts = {}
+
+
+    for i in range(len(query)):
+        
+        dic = {
+
+            "title" : query[i].title,
+            "body"  : query[i].body,
+            "rate"  : query[i].stars,
+        }
+
+        posts[i] =  dic
 
     import json
-
-    return HttpResponse(json.dumps(json_content))
+    return HttpResponse(json.dumps(posts))
