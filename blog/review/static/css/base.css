@@ -67,6 +67,8 @@ body{
 }
 
 .sidebar>a {
-
+  
+  cursor:pointer;
   color:white;
 }
+

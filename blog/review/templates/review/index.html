@@ -75,10 +75,10 @@
 
 <div class="container" style="margin:auto">
   <div class="container pull-left content">
-    <div class="text-justify row">
+    <div class="text-justify row" id="post">
     {% for obj in objects %}
-
       <div class="col-md-12">
+
         <div class="panel panel-primary">
           <div class="text-center panel-heading">{{ obj.title }}</div>
           <div class="panel-body">
@@ -98,7 +98,7 @@
 </div>
 
   <div style="padding-top:20px" class="container pull-right sidebar">
-    <a id="InSort" href=""><b>Insersion Sort</b></a><br></a>
+    <a id="InSort"><b>Insersion Sort</b></a><br>
     <a href=""><b>Binary Search</b><br></a>
     <a href=""><b>Quick Sork</b><br></a>
     <a href=""><b>Suffix Array</b><br></a>

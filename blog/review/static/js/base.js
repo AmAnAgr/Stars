@@ -48,11 +48,10 @@ function update(x, obj) { // updates the database of the user ratings
   request.send(null);
 
 }
-function updateRating() {   // gets the user star.
 
+function updateRating() {   // gets the user star.
   x = request.responseText;
   document.getElementById('stars').innerHTML = parseFloat(x).toFixed(2);
-
 }
 
 function display() {
@@ -75,9 +74,11 @@ function updateContent() {
   if (request.readyState == 4)
   {
     x = request.responseText;
-    content = JSON.parse(x)
+      loopy();
   }
-    
+
+
+
 }
 
 function displayStars() {
@@ -90,5 +91,27 @@ window.onload = init;
 function init() {
   displayStars();
   document.getElementById("InSort").addEventListener( "click", display , false );
+}
 
+function loopy()
+{  
+  r = document.getElementById("post");
+  r.innerHTML = "";
+  j = '{ "hi1" : "hello","hi2" : "hello2","hi3" : "hello3","hi4" : "hello4","hi5" : "hello5","hi6" : "hello6" }';
+  j = JSON.parse(j);
+  titles = Object.keys(j);
+  var count = titles.length; // returns length of json data
+
+  for (var i = 0; i < count; i++) {
+
+    r.innerHTML = r.innerHTML + '<div class="col-md-12"><div class="panel panel-primary">\
+    <div class="text-center panel-heading">' + titles[i] + '</div><div class="panel-body">' + j[titles[i]] + '\
+    <hr><span id="1" onclick="rate(1, {{ obj.id }})" class="glyphicon glyphicon-star-empty" aria-hidden="true">\
+    </span><span id="2" onclick="rate(2, {{ obj.id }})" class="glyphicon glyphicon-star-empty" aria-hidden="true">\
+    </span><span id="3" onclick="rate(3, {{ obj.id }})" class="glyphicon glyphicon-star-empty" aria-hidden="true">\
+    </span><span id="4" onclick="rate(4, {{ obj.id }})" class="glyphicon glyphicon-star-empty" aria-hidden="true">\
+    </span><span id="5" onclick="rate(5, {{ obj.id }})" class="glyphicon glyphicon-star-empty" aria-hidden="true">\
+    </span><span id="stars">{{ obj.stars }}</span></div></div></div>'
+
+  }
 }
