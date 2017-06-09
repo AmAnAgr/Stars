@@ -65,3 +65,8 @@ hr{
 body{
   background: -webkit-linear-gradient(top, #b3b3b0 0%, #e3e2dd 500px);
 }
+
+.sidebar>a {
+
+  color:white;
+}

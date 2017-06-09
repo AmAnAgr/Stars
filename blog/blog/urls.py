@@ -18,10 +18,11 @@ from django.contrib import admin
 
 # views import
 
-from review.views import home, rate
+from review.views import home, rate, display
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', home, name="home"),
-    url(r'^rate', rate, name="rate")
+    url(r'^rate', rate, name="rate"),
+    url(r'^display', display, name="display")
 ]

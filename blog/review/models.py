@@ -3,8 +3,15 @@ from django.db import models
 from django.utils import timezone
 
 # Create your models here.
+class Struct(models.Model):
+    name = models.CharField(max_length=220, null=True, blank=True,)
+
+    def __str__(self):
+        return self.name
+
 class Object(models.Model):
     title       = models.CharField(max_length=220)
+    struct      = models.ForeignKey('Struct', null=True, blank=True, on_delete=models.CASCADE)
     body        = models.TextField()
     stars       = models.CharField(max_length=220, default=0)    # FROM 0 TO 5 (CAN BE DECIMAL)
     no_users    = models.IntegerField(default=0)

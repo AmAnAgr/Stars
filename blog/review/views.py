@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from .models import Object, Rate, User
+from .models import Object, Rate, User, Struct
 from .helper import set_cookie
 
 # Create your views here.
@@ -60,7 +60,20 @@ def rate(request):
         o.stars = s/(o.no_users+1)
         o.no_users += 1
         o.save()
-    
-    
  
     return HttpResponse(o.stars)
+
+
+def display(request):
+    
+    struct = request.GET.get('struct', None)
+    content = Object.objects.filter( struct=Struct.objects.get( name=struct ))[0]
+
+    json_content = {
+        "title" : content.title,
+        "text"  : content.body,
+    }
+
+    import json
+
+    return HttpResponse(json.dumps(json_content))
