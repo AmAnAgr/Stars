@@ -77,7 +77,7 @@
   <div class="container pull-left content">
     <div class="text-justify row" id="post">
     {% for obj in objects %}
-      <div class="col-md-12">
+      <div class="inside-content col-md-12">
 
         <div class="panel panel-primary">
           <div class="text-center panel-heading">{{ obj.title }}</div>
@@ -89,9 +89,19 @@
               <span id="3" onclick="rate(3, {{ obj.id }})" class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
               <span id="4" onclick="rate(4, {{ obj.id }})" class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
               <span id="5" onclick="rate(5, {{ obj.id }})" class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+              <button onclick="show_comment(this)" class="btn btn-primary comment-btn">Comment</button>
               <span id="stars">{{ obj.stars }}</span>
           </div>
         </div>
+      <div class="col-md-12 comment">
+        <div class="col-md-9">
+          <input class="form-control" type="text">
+        </div>
+        <div class="col-md-3">
+          <button class="btn btn-primary">Comment</button>
+          <span style="float:right; top:9px;" onclick="close_comment(this)" class="glyphicon glyphicon-remove"></span>
+        </div>
+      </div>
       </div>
       {% endfor %}
     </div>

@@ -73,7 +73,6 @@ function updateContent() {
   if (request.readyState == 4)
   {
     x = request.responseText;
-    console.log(JSON.parse(x));
       loopy(x);
   }
 
@@ -113,4 +112,15 @@ function loopy(x)
     </span><span id="stars">' + j[titles[i]]["rate"] + '</span></div></div></div>'
 
   }
+}
+
+
+function show_comment(e) {
+  e.parentElement.parentElement.nextElementSibling.style.display = "block";
+  e.style.display = "none";
+}
+
+function close_comment(e) {
+  e.parentElement.parentElement.style.display = "none";
+  console.log(e.parentElement.parentElement.parentElement.getElementsByClassName("comment-btn")[0].style.display="block")
 }
