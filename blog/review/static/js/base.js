@@ -1,20 +1,21 @@
-function rate(x, obj) // toggles appearance of stars.
+function rate(x, obj, e) // toggles appearance of stars.
 {
+  element = e.parentElement;
   var i;
   for (i=1;i<=x;i++)
   {
-    var e = document.getElementById(i);
-    e.classList.add('glyphicon-star');
-    e.classList.remove('glyphicon-star-empty');
+    var star = element.getElementsByClassName(i)[0];
+    star.classList.add('glyphicon-star');
+    star.classList.remove('glyphicon-star-empty');
   }
   for (i=x+1;i<=5;i++)
   {
-    var e = document.getElementById(i);
-    e.classList.remove('glyphicon-star');
-    e.classList.add('glyphicon-star-empty');
+    var star = element.getElementsByClassName(i)[0];
+    star.classList.remove('glyphicon-star');
+    star.classList.add('glyphicon-star-empty');
   }
-
-  update(x, obj);
+  stars = element.getElementsByClassName("stars");
+  update(x, obj, stars);
 }
 
 function createRequest() // creates a request object
@@ -36,7 +37,7 @@ function createRequest() // creates a request object
 }
 
 
-function update(x, obj) { // updates the database of the user ratings
+function update(x, obj, stars) { // updates the database of the user ratings
   var request = createRequest();
   if (request == null) {
     alert("Unable to rate, try again or update your browser");
@@ -50,8 +51,12 @@ function update(x, obj) { // updates the database of the user ratings
 }
 
 function updateRating() {   // gets the user star.
-  x = request.responseText;
-  document.getElementById('stars').innerHTML = parseFloat(x).toFixed(2);
+  if (request.readyState==4){
+
+  x = request.responseText;    
+  stars[0].innerHTML = parseFloat(x).toFixed(2);
+
+  }
 }
 
 function display() {
@@ -122,5 +127,5 @@ function show_comment(e) {
 
 function close_comment(e) {
   e.parentElement.parentElement.style.display = "none";
-  console.log(e.parentElement.parentElement.parentElement.getElementsByClassName("comment-btn")[0].style.display="block")
+  e.parentElement.parentElement.parentElement.getElementsByClassName("comment-btn")[0].style.display="block";
 }

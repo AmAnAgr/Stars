@@ -84,13 +84,13 @@
           <div class="panel-body">
             {{ obj.body }}
             <hr>
-              <span id="1" onclick="rate(1, {{ obj.id }})" class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-              <span id="2" onclick="rate(2, {{ obj.id }})" class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-              <span id="3" onclick="rate(3, {{ obj.id }})" class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-              <span id="4" onclick="rate(4, {{ obj.id }})" class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-              <span id="5" onclick="rate(5, {{ obj.id }})" class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+              <span  onclick="rate(1, {{ obj.id }}, this)" class="glyphicon glyphicon-star-empty 1" aria-hidden="true"></span>
+              <span  onclick="rate(2, {{ obj.id }}, this)" class="glyphicon glyphicon-star-empty 2" aria-hidden="true"></span>
+              <span  onclick="rate(3, {{ obj.id }}, this)" class="glyphicon glyphicon-star-empty 3" aria-hidden="true"></span>
+              <span  onclick="rate(4, {{ obj.id }}, this)" class="glyphicon glyphicon-star-empty 4" aria-hidden="true"></span>
+              <span  onclick="rate(5, {{ obj.id }}, this)" class="glyphicon glyphicon-star-empty 5" aria-hidden="true"></span>
               <button onclick="show_comment(this)" class="btn btn-primary comment-btn">Comment</button>
-              <span id="stars">{{ obj.stars }}</span>
+              <span id="stars" class="stars">{{ obj.stars }}</span>
           </div>
         </div>
       <div class="col-md-12 comment">

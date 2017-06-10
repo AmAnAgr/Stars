@@ -33,3 +33,8 @@ class Rate(models.Model):
 
     def __str__(self):
         return self.user.name
+
+class Comment(models.Model):
+    text = models.TextField()
+    user = models.ForeignKey('User', on_delete=models.CASCADE)
+    post = models.ForeignKey('Object', on_delete=models.CASCADE)
